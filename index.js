@@ -1,15 +1,12 @@
-
-for( var i=0 ; i< document.querySelectorAll(".drum").length; i++){
-    document.querySelectorAll(".drum")[i].addEventListener("click",function(){
-        var buttoninnerHTML = this.innerHTML;
-        makeSound(buttoninnerHTML);
-        buttonfade(buttoninnerHTML)
-    });
+for ( var i =0; i<document.querySelectorAll(".drum").length; i++){
+document.querySelectorAll(".drum")[i].addEventListener("click",function (){
+    var buttoninnerHTML = this.innerHTML;
+    makeSound(buttoninnerHTML);
+    buttonfade(buttoninnerHTML)
+});
  //   document.addEventListener("keyup",functiorahyeahhn(event){
-        makeSound(ButtonInnerHTML)
+        // makeSound(ButtonInnerHTML)
  //   })
-
-
 document.body.addEventListener("keypress",(event)=>{
     makeSound(event.key)
     buttonfade(event.key)
@@ -43,16 +40,17 @@ function makeSound(key){
     }
 
 }
- function buttonfade(pressedKey){
-    var activeKey = document.querySelector("."+pressedKey)
- //   activeKey = document.querySelector(".s")
+function buttonfade(pressedKey){
+    console.log(":"+pressedKey)
+    var activeKey = document.querySelector(`.${pressedKey}`)
+    //   activeKey = document.querySelector(".s")
     activeKey.classList.add("pressButton")
     setTimeout(function(){
         activeKey.classList.remove("pressButton")
     },100)
+}    
+}
 
-}
-}
 
 //function Audio( Filelocation ){
 //    this.Filelocation = Filelocation
